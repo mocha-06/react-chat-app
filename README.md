@@ -13,3 +13,13 @@ npm install @types/react-redux
 
 react-error-boundary
 npm install react-error-boundary
+
+
+npm config set prefix '~/.npm-global'
+export PATH=~/.npm-global/bin:$PATH
+npm install -g firebase-tools
+firebase login
+firebase init
+Viteを使用しているのでディレクトリをdistへ
+npm run build
+firebase deploy
