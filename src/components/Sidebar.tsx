@@ -8,7 +8,7 @@ import SettingsIcon from '@mui/icons-material/Settings'
 import { auth, db } from '../firebase'
 import { useAppSelector } from '../app/hooks'
 import useCollection from '../hooks/useCollection'
-import { addDoc, collection } from 'firebase/firestore'
+import { DocumentData, DocumentReference, addDoc, collection } from 'firebase/firestore'
 
 const Sidebar = () => {
   const user = useAppSelector((state) => state.user.user)
@@ -18,9 +18,12 @@ const Sidebar = () => {
     let channelName: string | null = prompt('新しいチャンネルを作成します')
 
     if (channelName) {
-      await addDoc(collection(db, 'channels'), {
-        channelName: channelName,
-      })
+      const docRef: DocumentReference<DocumentData> = await addDoc(
+        collection(db, 'channels'),
+        {
+          channelName: channelName,
+        }
+      )
     }
   }
 

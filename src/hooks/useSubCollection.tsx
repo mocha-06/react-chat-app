@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { DocumentData, Query, Timestamp, collection, onSnapshot, orderBy, query } from 'firebase/firestore'
+import { Timestamp, collection, onSnapshot, orderBy, query } from 'firebase/firestore'
 import { db } from "../firebase"
 import { useAppSelector } from '../app/hooks'
 
