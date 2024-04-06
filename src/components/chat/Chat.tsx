@@ -11,7 +11,7 @@ import { db } from '../../firebase'
 import {
   CollectionReference,
   DocumentData,
-  DocumentReference,
+  // DocumentReference,
   addDoc,
   collection,
   serverTimestamp
@@ -40,11 +40,23 @@ const Chat = () => {
       'messages'
     )
 
-    const docRef: DocumentReference<DocumentData> = await addDoc(collectionRef, {
-      message: inputText,
-      timestamp: serverTimestamp(),
-      user: user,
-    })
+    // const docRef: DocumentReference<DocumentData> = await addDoc(
+    //   collectionRef,
+    //   {
+    //     message: inputText,
+    //     timestamp: serverTimestamp(),
+    //     user: user,
+    //   }
+    // )
+    
+    await addDoc(
+      collectionRef,
+      {
+        message: inputText,
+        timestamp: serverTimestamp(),
+        user: user,
+      }
+    )
     // console.log(docRef)
     setInputText('')
   }
@@ -97,4 +109,4 @@ const Chat = () => {
   )
 }
 
-export default Chat　
+export default Chat
