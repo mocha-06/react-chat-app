@@ -1,3 +1,5 @@
+https://discorde-clone-practice.web.app/
+
 npm create vite@latest . -- --template react-ts
 npm install
 npm install @mui/material @emotion/react @emotion/styled
